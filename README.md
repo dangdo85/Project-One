@@ -26,9 +26,9 @@ Game mechanics
     - TO WIN: a player must complete 2 sets of 4 tokens in a row (horizontally, vertically, or diagonally) *Only 1 token from a complete set can be use for the 2nd set*
 
 
-     ![](Wire Framss/Wire Frame 1.jpeg)
-     ![](Wire Framss/Wire Frame 2.jpeg)
-     ![](Wire Framss/Wire Frame 3.jpeg)
-     ![](Wire Framss/Wire Frame 4.jpeg)
-     ![](Wire Framss/Wire Frame 5.jpeg)
-     ![](Wire Framss/Wire Frame 6.jpeg)
+     ![](WireFrames/WF 1.jpeg)
+     ![](WireFrames/WF 2.jpeg)
+     ![](WireFrames/WF 3.jpeg)
+     ![](WireFrames/WF 4.jpeg)
+     ![](WireFrames/WF 5.jpeg)
+     ![](WireFrames/WF 6.jpeg)
