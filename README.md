@@ -18,5 +18,17 @@ User Story
     - AAU, I would like to have an indicator for a tie
     - AAU, I would like to click a button to reset the game
      
+Game mechanics
+    - This is a human vs computer game
+    - The players' alternate turns
+    - During each turn, the player picks 1 of the 4 randomized cards in hand, and a token is placed on the corresponding space on the board
+    - The player then draws a card from the card stack and the turn ends and the other player's turn begins with choosing a card from hand to play
+    - TO WIN: a player must complete 2 sets of 4 tokens in a row (horizontally, vertically, or diagonally) *Only 1 token from a complete set can be use for the 2nd set*
 
 
+     ![](Wire Framss/Wire Frame 1.jpeg)
+     ![](Wire Framss/Wire Frame 2.jpeg)
+     ![](Wire Framss/Wire Frame 3.jpeg)
+     ![](Wire Framss/Wire Frame 4.jpeg)
+     ![](Wire Framss/Wire Frame 5.jpeg)
+     ![](Wire Framss/Wire Frame 6.jpeg)
