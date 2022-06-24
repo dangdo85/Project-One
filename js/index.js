@@ -2,7 +2,10 @@
 
 // const computer = document.getElementById('computer')
 
-// const cardOne = document.getElementById('playerCard1')
+
+// const cardOne = document.body.getElementById('playerCard1')
+// cardOne.appendChild(shuffledDeck[shuffledDeck.length - 1])
+// console.log(cardOne)
 
 // const cardTwo = document.getElementById('playerCard2')
 
@@ -30,7 +33,7 @@
 //         const observer = new MutationObserver(() => takeTurn());
 //         board.positions.forEach((el) => observer.observe(el, config));
 //         takeTurn();
-//     }
+    // }
 
 //     function takeTurn() {
 //         if (board.checkForWinner()) {
@@ -53,10 +56,10 @@
 //             message.textContent = `It's a draw!!!`; }
 //         }
 
-        function Board() {
-            this.positions = Array.from(document.querySelectorAll('board'));
-            console.log(this.positions)
-        }
+        // function Board() {
+        //     this.positions = Array.from(document.querySelectorAll('board'));
+        //     console.log(this.positions)
+        // }
 //             this.checkForWinnner = function() {
 //                 let winner = false;
 //                 const winningCombinations = [
@@ -125,31 +128,67 @@
 //     }
 
 
-//deck of cards
-const rows = ['A', 'B', 'C', 'D', 'E', 'F'];
+//make card deck, shuffle, and deal hands
+let players = [];
+players[0] = {name: 'Player', hand: []};
+players[1] = {name: 'Computer', hand: []};
 
-const columns = ['0', '1', '2', '3', '4', '5',];
-const deck = [];
-
-for(let rowCounter = 0; rowCounter < 6; rowCounter += 1) {
-    for(let columnCounter = 0; columnCounter < 6; columnCounter += 1) {
-        deck.push(rows[rowCounter] + columns[columnCounter])
+const rows = ['A','B','C','D', 'E', 'F'];
+const columns = ['0', '1', '2', '3', '4', '5'];
+let deck = [];
+for (let i=0;i<rows.length;i++) {
+    for (let j=0;j<columns.length;j++) {
+        const card = {row: `${rows[j]}`, column: `${columns[i]}`};
+        deck.push(card);
     }
 }
-// console.log(deck)
 
-//selecting random card
-let cardSelect = deck[Math.floor(Math.random()*deck.length)];
+deck.sort(function() {return 0.5 - Math.random();});
 
-//removing selected card from array
-let cardIndex = deck.indexOf(cardSelect);
+const deal = function() {
+    for (i=0;i<4;i++) {
+        let theDiv = ('')
+        for (j=0;j<players.length;j++) {
+            players[j].hand.push(deck[0]);
+            deck.splice(0,1); 
+    }
+}
+}
+deal();
 
-    if (cardIndex > -1) {
-    deck.splice(cardIndex, 1);
-    console.log(cardSelect);
-    console.log(deck);
+//display cards in hand
+let playerCard1 = document.getElementById('playerCard1');
+    playerCard1.textContent = `${players[0].hand[0].row}${players[0].hand[0].column}`;
+let playerCard2 = document.getElementById('playerCard2');
+    playerCard2.innerText = `${players[0].hand[1].row}${players[0].hand[1].column}`;
+let playerCard3 = document.getElementById('playerCard3');
+    playerCard3.innerText = `${players[0].hand[2].row}${players[0].hand[2].column}`;
+let playerCard4 = document.getElementById('playerCard4')
+    playerCard4.innerText = `${players[0].hand[3].row}${players[0].hand[3].column}`;    
+
+//click cards in hand...    
+let el1 = document.getElementById('playerCard1');
+    el1.onclick = clickHere1; 
+function clickHere1() {
+    document.getElementById(`${el1}`).innerText = 'X';
+    // '<p style="color: orange", "font-size=2rem">X</p>';
+}    
+
+let el2 = document.getElementById('playerCard2');
+    el2.onclick = clickHere2; 
+function clickHere2() {
+    console.log('clicked2')
 }
 
+let el3 = document.getElementById('playerCard3');
+    el3.onclick = clickHere3; 
+function clickHere3() {
+    console.log('clicked3')
+}
 
-
-
+let el4 = document.getElementById('playerCard4');
+    el4.onclick = clickHere4; 
+function clickHere4() {
+    console.log('clicked4')
+}
+// }

@@ -65,7 +65,7 @@ h2 {
     justify-content: center;
 }
 
-.playerCard1 {
+#playerCard1 {
     display: inline;
     text-align: center;
     color: black;
@@ -74,7 +74,7 @@ h2 {
     margin-left:50px;
 }
 
-.playerCard2 {
+#playerCard2 {
     display: inline;
     text-align: center;
     color: black;
@@ -82,14 +82,14 @@ h2 {
     padding: 10px 50px 10px 50px;
 }
 
-.playerCard3 {
+#playerCard3 {
     display: inline;
     text-align: center;
     color: black;
     background-color: purple;
     padding: 10px 50px 10px 50px;
 }
-.playerCard4 {
+#playerCard4 {
     display: inline;
     text-align: center;
     color: black;
@@ -104,12 +104,12 @@ h2 {
     background-color: none;
     gap: 5px 50px;
     font-size: 2rem;
-    margin-bottom: 50px;
-    margin-top: 10px;
+    margin-bottom: -30px;
+    margin-top: 50px;
     justify-content: center;
 }
 
-.compCard1 {
+#compCard1 {
     display: inline;
     text-align: center;
     color: black;
@@ -117,7 +117,7 @@ h2 {
     padding: 10px 50px 10px 50px;
 }
 
-.compCard2 {
+#compCard2 {
     display: inline;
     text-align: center;
     color: black;
@@ -125,14 +125,14 @@ h2 {
     padding: 10px 50px 10px 50px;
 }
 
-.compCard3 {
+#compCard3 {
     display: inline;
     text-align: center;
     color: black;
     background-color: purple;
     padding: 10px 50px 10px 50px;
 }
-.compCard4 {
+#compCard4 {
     display: inline;
     text-align: center;
     color: black;
@@ -169,4 +169,8 @@ h2 {
 
 .middle {
     margin-right: 50px;
+}
+
+.pointer {
+    cursor: pointer
 }
