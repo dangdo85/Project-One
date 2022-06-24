@@ -1,39 +1,13 @@
-// const player = document.getElementsByClassName('player')
-
-// const computer = document.getElementById('computer')
-
-
-// const cardOne = document.body.getElementById('playerCard1')
-// cardOne.appendChild(shuffledDeck[shuffledDeck.length - 1])
-// console.log(cardOne)
-
-// const cardTwo = document.getElementById('playerCard2')
-
-// const cardThree = document.getElementById('playerCard3')
-
-// const cardFour = document.getElementById('playerCard4')
-
 // const startReset = document.getElementById('startReset')
 
 // const cardsRemaining = document.getElementById('cardsRemaining')
 
 // const cells = document.getElementById('cell')
 
-// const sequenceGame = new SequenceGame();
-// sequenceGame.start();
 
-// function SequenceGame() {
-//     const board = new Board();
-//     const player = new player(board);
-//     const computer = new computer(board);
-//     let turn = 0;
 
-//     this.start = function() {
-//         const config = { childList: true};
-//         const observer = new MutationObserver(() => takeTurn());
-//         board.positions.forEach((el) => observer.observe(el, config));
-//         takeTurn();
-    // }
+
+
 
 //     function takeTurn() {
 //         if (board.checkForWinner()) {
@@ -126,13 +100,26 @@
 //             }
 //         }
 //     }
+// const sequenceGame = new SequenceGame();
+// sequenceGame.start();
 
+// function SequenceGame() {
+//     const board = new Board();
+//     const player = new player(board);
+//     const computer = new computer(board);
+//     let turn = 0;
 
-//make card deck, shuffle, and deal hands
+//     this.start = function() {
+//         const config = { childList: true};
+//         const observer = new MutationObserver(() => takeTurn());
+//         board.positions.forEach((el) => observer.observe(el, config));
+//         takeTurn();
+
 let players = [];
 players[0] = {name: 'Player', hand: []};
 players[1] = {name: 'Computer', hand: []};
 
+//make card deck, shuffle, and deal hands
 const rows = ['A','B','C','D', 'E', 'F'];
 const columns = ['0', '1', '2', '3', '4', '5'];
 let deck = [];
@@ -155,40 +142,49 @@ const deal = function() {
 }
 }
 deal();
+let spaceOne = `${players[0].hand[0].row}${players[0].hand[0].column}`
+let spaceTwo = `${players[0].hand[1].row}${players[0].hand[1].column}`
+let spaceThree = `${players[0].hand[2].row}${players[0].hand[2].column}`
+let spaceFour = `${players[0].hand[3].row}${players[0].hand[3].column}`
+
 
 //display cards in hand
 let playerCard1 = document.getElementById('playerCard1');
-    playerCard1.textContent = `${players[0].hand[0].row}${players[0].hand[0].column}`;
+    playerCard1.textContent = spaceOne;
 let playerCard2 = document.getElementById('playerCard2');
-    playerCard2.innerText = `${players[0].hand[1].row}${players[0].hand[1].column}`;
+    playerCard2.innerText = spaceTwo;
 let playerCard3 = document.getElementById('playerCard3');
-    playerCard3.innerText = `${players[0].hand[2].row}${players[0].hand[2].column}`;
+    playerCard3.innerText = spaceThree;
 let playerCard4 = document.getElementById('playerCard4')
-    playerCard4.innerText = `${players[0].hand[3].row}${players[0].hand[3].column}`;    
+    playerCard4.innerText = spaceFour;    
 
 //click cards in hand...    
 let el1 = document.getElementById('playerCard1');
     el1.onclick = clickHere1; 
 function clickHere1() {
-    document.getElementById(`${el1}`).innerText = 'X';
-    // '<p style="color: orange", "font-size=2rem">X</p>';
-}    
+    document.getElementById(spaceOne).innerHTML = '<p style="color: orange">X</p>';
+    players[0].hand[0].splice(0, 1, deck[0]);
+    console.log(`${deck[0].row}${deck[0].column}`);
+    deck[0].splice(0, 1);
+    console.log(`${deck[0].row}${deck[0].column}`);
+}
 
 let el2 = document.getElementById('playerCard2');
     el2.onclick = clickHere2; 
 function clickHere2() {
-    console.log('clicked2')
+    document.getElementById(spaceTwo).innerHTML = '<p style="color: orange">X</p>';
 }
 
 let el3 = document.getElementById('playerCard3');
     el3.onclick = clickHere3; 
 function clickHere3() {
-    console.log('clicked3')
+    document.getElementById(spaceThree).innerHTML = '<p style="color: orange">X</p>';
 }
 
 let el4 = document.getElementById('playerCard4');
     el4.onclick = clickHere4; 
 function clickHere4() {
-    console.log('clicked4')
+    document.getElementById(spaceFour).innerHTML = '<p style="color: orange">X</p>';
 }
+//     }
 // }
